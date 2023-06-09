@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  TextField,
   Button,
   Window,
   WindowHeader,
@@ -42,7 +41,7 @@ const Signup = () => {
     setIsPasswordValid(validatePassword(tmp));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
     try {
       await SignUpAPI(email, password);
       // 성공 시 메인 페이지로 이동
@@ -104,6 +103,7 @@ const Signup = () => {
                   fullWidth
                   disabled={!isEmailValid || !isPasswordValid}
                   style={{ fontFamily: "dunggeunmo-bold" }}
+                  onClick={() => handleSubmit}
                 >
                   Submit
                 </Button>

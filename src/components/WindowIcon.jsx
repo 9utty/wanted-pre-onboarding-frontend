@@ -26,7 +26,7 @@ const WindowIcon = ({ func, ImageUrl, IconName }) => {
               verticalAlign: "middle",
             }}
           >
-            <img src={ImageUrl} />
+            <img src={ImageUrl} alt="windowIcon" />
           </div>
           <span
             style={{

@@ -53,6 +53,7 @@ const AppLayout = ({ Children }) => {
                         paddingRight: "5px",
                         height: "30px",
                       }}
+                      alt={"startIcon"}
                     />
                     Start
                   </Button>

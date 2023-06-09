@@ -9,7 +9,7 @@ import {
 } from "react95";
 import { useNavigate } from "react-router-dom";
 import MyModal from "../components/Modal";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { deleteTodo, getTodo, postTodo, updateTodo } from "../api/todo";
 
 const Todo = () => {
@@ -27,17 +27,17 @@ const Todo = () => {
     navigate(-1);
   };
 
-  const get = async () => {
+  const get = useCallback(async () => {
     const res = await getTodo();
     setTodoList(res.data);
     console.log(todoList[0]);
     setIsLoading(false);
-  };
+  }, [todoList]);
 
   useEffect(() => {
     setIsLoading(true);
     get();
-  }, []);
+  }, [get]);
 
   // update일땐 업데이트 요청
   // 삭제일땐 삭제 요청
