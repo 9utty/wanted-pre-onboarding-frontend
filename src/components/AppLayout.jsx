@@ -62,7 +62,7 @@ const AppLayout = ({ Children }) => {
                       style={{
                         position: "absolute",
                         left: "-6px",
-                        top: "13px",
+                        top: "32px",
                         width: "30vw",
                         zIndex: "100",
                       }}
