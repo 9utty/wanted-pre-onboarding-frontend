@@ -9,12 +9,12 @@ import {
 } from "react95";
 import { useNavigate } from "react-router-dom";
 import MyModal from "../components/Modal";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { deleteTodo, getTodo, postTodo, updateTodo } from "../api/todo";
 
 const Todo = () => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [updateInput, setUpdateInput] = useState("");
   const [todoList, setTodoList] = useState([]);
   const [input, setInput] = useState("");
@@ -35,7 +35,6 @@ const Todo = () => {
   }, [todoList]);
 
   useEffect(() => {
-    setIsLoading(true);
     get();
   }, [get]);
 
