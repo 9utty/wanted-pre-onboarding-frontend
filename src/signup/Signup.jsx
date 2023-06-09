@@ -103,7 +103,7 @@ const Signup = () => {
                   fullWidth
                   disabled={!isEmailValid || !isPasswordValid}
                   style={{ fontFamily: "dunggeunmo-bold" }}
-                  onClick={() => handleSubmit}
+                  onClick={handleSubmit}
                 >
                   Submit
                 </Button>

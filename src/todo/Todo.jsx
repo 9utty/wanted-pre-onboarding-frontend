@@ -38,9 +38,6 @@ const Todo = () => {
     get();
   }, [get]);
 
-  // update일땐 업데이트 요청
-  // 삭제일땐 삭제 요청
-
   const todoPost = async () => {
     const res = await postTodo(input);
     console.log(res.data);

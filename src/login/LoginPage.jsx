@@ -23,7 +23,6 @@ const LoginPage = () => {
     return emailRegex.test(email);
   };
 
-  // 비밀번호 유효성 검사 함수 (예: 최소 8자, 최소 하나의 대문자와 소문자, 최소 하나의 숫자)
   const validatePassword = (password) => {
     const passwordRegex = /^\S{8,}$/;
     return passwordRegex.test(password);

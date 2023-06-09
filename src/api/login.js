@@ -1,7 +1,5 @@
-// src/api/auth.js
-
 import axios from "axios";
-
+// https://www.pre-onboarding-selection-task.shop
 export const loginAPI = (email, password) => {
   const API = "https://www.pre-onboarding-selection-task.shop/auth/signin";
 
@@ -20,7 +18,7 @@ export const loginAPI = (email, password) => {
 };
 
 export const SignUpAPI = (email, password) => {
-  const API = "http://127.0.0.1/auth/signup";
+  const API = "https://www.pre-onboarding-selection-task.shop/auth/signup";
 
   return axios.post(
     API,
