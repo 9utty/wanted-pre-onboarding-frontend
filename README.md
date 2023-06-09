@@ -2,7 +2,7 @@
 
 ### 이건학
 
-`bash npm install && npm start`
+```bash npm install && npm start```
 
 ### 데모
 
