@@ -158,7 +158,7 @@ const Todo = () => {
                                   )
                                 }
                               />
-                              {!isUpdate && updateItemId === null && (
+                              {!isUpdate && updateItemId !== item.id && (
                                 <span
                                   style={{
                                     fontSize: "20px",
