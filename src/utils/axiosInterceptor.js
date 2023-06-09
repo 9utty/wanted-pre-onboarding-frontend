@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://127.0.0.1:8000",
+  baseURL: "https://www.pre-onboarding-selection-task.shop",
   timeout: 10000, // 타임아웃 설정, 10초 내에 응답이 없으면 에러 처리
 });
 
