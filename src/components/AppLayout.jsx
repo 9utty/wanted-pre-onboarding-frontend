@@ -70,7 +70,8 @@ const AppLayout = ({ Children }) => {
                     >
                       <MenuListItem
                         onClick={() =>
-                          (window.location.href = "https://github.com/9utty")
+                          (window.location.href =
+                            "https://github.com/9utty/wanted-pre-onboarding-frontend")
                         }
                       >
                         <span role="img" aria-label="📁">
