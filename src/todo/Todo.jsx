@@ -30,8 +30,12 @@ const Todo = () => {
   useEffect(() => {
     const get = async () => {
       const res = await getTodo();
-      setTodoList(res.data);
-      setIsLoading(false);
+      if (res.status === 200) {
+        setTodoList(res.data);
+        setIsLoading(false);
+      } else {
+        alert("정보를 가져오는데 실패했습니다.");
+      }
     };
 
     get();
@@ -40,7 +44,11 @@ const Todo = () => {
 
   const todoPost = async () => {
     const res = await postTodo(input);
-    console.log(res.data);
+    if (res.status !== 201) {
+      setInput("");
+      alert("Todo리스트 추가에 실패했습니다.");
+      return;
+    }
     if (todoList) {
       setTodoList([...todoList, res.data]);
     }
@@ -50,6 +58,11 @@ const Todo = () => {
   const todoUpdate = async (todoId, content, checked) => {
     const res = await updateTodo(todoId, content, checked);
 
+    if (res.status !== 200) {
+      cancelUpdate();
+      alert("Todo리스트 업데이트에 실패했습니다.");
+      return;
+    }
     setTodoList((prevTodoList) => {
       return prevTodoList.map((todo) => {
         if (todo.id === res.data.id) {
@@ -74,6 +87,8 @@ const Todo = () => {
       setTodoList((prevTodoList) => {
         return prevTodoList.filter((todo) => todo.id !== todoId);
       });
+    } else {
+      alert("Todo리스트 삭제에 실패했습니다.");
     }
   };
   const contentUpdate = (itemId) => {
